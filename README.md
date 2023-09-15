@@ -2,7 +2,7 @@
 
 This project should demonstrate the configuration of the secret needed for development but not disclose the default to production.
 
-A blog post describing the use case is published at TODO.
+A blog post describing the use case is published in Czech at https://blog.zvestov.cz/software%20development/2023/09/14/vychozi-zabezpeceni.html
 
 ## Run
 
