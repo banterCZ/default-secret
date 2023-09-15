@@ -20,14 +20,14 @@ public class SecretConfiguration {
 
     @Bean
     @ConditionalOnProperty(prefix = "cz.zvestov.secret", name = "type", havingValue = "file")
-    @ConditionalOnMissingBean(type = "cz.zvestov.defaultsecret.SecretService")
-    SecretService fileSecretService(@Value("${cz.zvestov.secret.file.path}")Path path) throws IOException {
+    @ConditionalOnMissingBean
+    SecretService fileSecretService(@Value("${cz.zvestov.secret.file.path}") Path path) throws IOException {
         return new FileSecretService(path);
     }
 
     @Bean
     @Profile("dev")
-    @ConditionalOnMissingBean(type = "cz.zvestov.defaultsecret.SecretService")
+    @ConditionalOnMissingBean
     SecretService devSecretService() {
         return new DevSecretService();
     }
